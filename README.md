@@ -1,3 +1,1 @@
-medi-trick pipeline project....
-
-clock it
+medi-trick pipeline project
