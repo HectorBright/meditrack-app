@@ -10,14 +10,21 @@ pipeline {
 
         stage('Test') {
             steps {
-                echo 'Testing the application...'
+                echo 'Testing...'
             }
         }
+    }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-            }
+    post {
+        success {
+            mail to: 'brightnwankwo14@gmail.com',
+                 subject: "Build Success",
+                 body: "MediTrack deployed successfully"
+        }
+        failure {
+            mail to: 'brightnwankwo14@gmail.com',
+                 subject: "Build Failed",
+                 body: "Check Jenkins immediately"
         }
     }
 }
